@@ -1,0 +1,3 @@
+/home/maburnashev/projects/consultations/build/CMakeFiles/consultations.dir
+/home/maburnashev/projects/consultations/build/CMakeFiles/edit_cache.dir
+/home/maburnashev/projects/consultations/build/CMakeFiles/rebuild_cache.dir

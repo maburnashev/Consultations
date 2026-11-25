@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/consultations.dir/link.d CMakeFiles/consultations.dir/main.cpp.o CMakeFiles/consultations.dir/src/banking.cpp.o -o consultations

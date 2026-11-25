@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/maburnashev/projects/consultations/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
