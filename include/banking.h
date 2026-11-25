@@ -39,7 +39,7 @@ protected:
 
 public:
     CreditAccount();
-    CreditAccount(const std::string& name, const double amount);
+    CreditAccount(const std::string& name, const double amount, const double limit);
     CreditAccount(CreditAccount&& other);
     CreditAccount& operator=(CreditAccount&& rhs);
 

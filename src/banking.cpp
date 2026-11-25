@@ -85,17 +85,17 @@ std::ostream& operator<<(std::ostream& os, const BankAccount& account) {
 CreditAccount::CreditAccount()
     : BankAccount(), credit_limit(0.0) {}
 
-CreditAccount::CreditAccount(const std::string& name,
-                             const double amount)
-    : BankAccount(name, amount), credit_limit(0.0) {}
+CreditAccount::CreditAccount(const std::string& name, const double amount, const double limit) 
+    : BankAccount(name, amount), credit_limit(limit) {
+}
 
 CreditAccount::CreditAccount(CreditAccount&& other)
-    : BankAccount(std::move(other)),
-      credit_limit(std::exchange(other.credit_limit, 0.0)) {}
+    : BankAccount(std::move(other)), credit_limit(std::exchange(other.credit_limit, 0.0)) {
+}
 
 CreditAccount& CreditAccount::operator=(CreditAccount&& rhs) {
     if (this != &rhs) {
-        BankAccount::operator=(std::move(rhs));
+        BankAccount::operator=(std::move(rhs)); // !
 
         credit_limit = std::exchange(rhs.credit_limit, 0.0);
     }
@@ -143,7 +143,7 @@ bool DebitAccount::is_happy() const {
 
 DebitJunior::DebitJunior(DebitAccount*& p) : parent(p) {
     balance = parent->get_balance();
-    owner = "child of user with ID " + std::to_string(parent->get_id());
+    owner = "Сhild of user with ID " + std::to_string(parent->get_id());
 }
 
 DebitJunior::DebitJunior(DebitJunior&& other) 

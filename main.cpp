@@ -30,8 +30,8 @@ void bank_test() {
     using AccountPtr = std::unique_ptr<BankAccount>;
 
     // vector
-    auto parent = std::make_unique<DebitAccount>("papa", 1234.00);
-    auto creditor = std::make_unique<CreditAccount>("mama", 4200.00);
+    auto parent = std::make_unique<DebitAccount>("papa", 1234.0);
+    auto creditor = std::make_unique<CreditAccount>("mama", 4200.00, 10000.0);
 
     DebitAccount* parent_ptr = parent.get();
 
@@ -52,7 +52,7 @@ void bank_test() {
     // set
     std::set<AccountPtr, AccountComparator> account_set;
     account_set.insert(std::make_unique<DebitAccount>("1st", 123.4));
-    account_set.insert(std::make_unique<CreditAccount>("2nd", 12.34));
+    account_set.insert(std::make_unique<CreditAccount>("2nd", 12.34, 1000.0));
     account_set.insert(std::make_unique<DebitAccount>("3rd", 1.234));
 
     for (const auto& account : account_set) {
